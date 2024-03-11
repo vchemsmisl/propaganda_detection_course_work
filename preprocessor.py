@@ -12,10 +12,15 @@ class TextPreprocessor:
     def _open_text_file(text_url):
         with open(text_url, 'r', encoding='utf-8') as file:
             text = file.read()
+        if not text:
+            return
         return text
 
     def delete_unrelated_texts(self):
-        pass
+        self.text = self.text.replace(
+            'Больше актуальных видео и подробностей о ситуации в Донбассе смотрите на телеканале «Известия»',
+            '')
+        self.text = re.sub(r'Учредитель.*«Редакция «Российской газеты»', '', self.text)
 
     def split_sentences(self):
         sent_pattern = r'((?<=[A-Za-zА-Яа-я0-9]\.\.\.)|(?<=[A-Za-zА-Яа-я0-9]' \

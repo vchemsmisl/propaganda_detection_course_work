@@ -1,6 +1,11 @@
 {
-    "seed_urls": ["https://russian.rt.com/news"],
-    "num_articles": 10,
+    "seed_urls": ["https://iz.ru/feed", "https://www.mk.ru/news/", "https://rg.ru/news.html"],
+    "num_articles": 100,
+    "apikey": "0334013d496e4e3470d7edff8e9382c0fb764cd1",
+    "params": {"url": "https://iz.ru/feed",
+    "apikey": "0334013d496e4e3470d7edff8e9382c0fb764cd1",
+	"js_render": true,
+	"premium_proxy": true},
     "headers": {
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "accept-encoding": "gzip, deflate, br",
@@ -13,7 +18,7 @@
         "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
     },
     "encoding": "utf8",
-    "timeout": 10,
+    "timeout": 40,
     "should_verify_certificate": true,
     "headless_mode": true
 }
