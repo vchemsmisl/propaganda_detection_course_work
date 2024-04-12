@@ -19,11 +19,24 @@ class WrongSeedURLError(Exception):
 
 
 def get_current_directory(url: str, articles_path: Path) -> Path:
+    """
+    Given a link to the article and a path to the folder
+    with articles, gets the path to the
+    folder with articles of particular source edition
+    :param url: a link to the article
+    :param articles_path: a path to the folder
+    with articles
+    :return: the path to a particular folder
+    """
+
     if '//iz' in url:
         return articles_path / 'Izvestiya_articles'
+
     elif '//rg' in url:
         return articles_path / 'RG_articles'
+
     elif 'mk.ru' in url:
         return articles_path / 'MK_articles'
+
     else:
         raise WrongSeedURLError('Entered URL isn\'t present in the "seed_urls" parameter of the config file')
